@@ -108,11 +108,7 @@ export class HeaderGroupWrapperComp extends Component {
         // this function adds or removes the moving css, based on if the col is moving.
         // this is what makes the header go dark when it is been moved (gives impression to
         // user that the column was picked up).
-        if (this.columnGroup.isMoving()) {
-            _.addCssClass(this.getGui(), 'ag-header-cell-moving');
-        } else {
-            _.removeCssClass(this.getGui(), 'ag-header-cell-moving');
-        }
+        _.addOrRemoveCssClass(this.getGui(), 'ag-header-cell-moving', this.columnGroup.isMoving());
     }
 
     private addAttributes(): void {
