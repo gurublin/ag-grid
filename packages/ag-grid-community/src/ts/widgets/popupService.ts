@@ -433,7 +433,7 @@ export class PopupService {
             // `ag-custom-component-popup` class to be detected as part of the Custom Component
             let el = event.target as HTMLElement;
             while (el && el != document.body) {
-                if (el.classList.contains('ag-custom-component-popup')) { return true; }
+                if (el.classList.contains('ag-custom-component-popup') || el.parentElement === null) { return true; }
                 el = el.parentElement;
             }
         }
